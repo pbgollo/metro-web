@@ -1,0 +1,12 @@
+---
+description: Especificação do MetroIsJustABus. Usar em fluxos de passageiro, rede, horários, bilhetes, perturbações, notificações e contratos com o backend.
+alwaysApply: false
+---
+
+# Especificação do projeto
+
+A especificação consultável é `docs/spec/metro-is-just-a-bus.md` (enunciado v1.0, 2026-09-29). O PDF original está em `docs/spec/`. Há uma cópia igual em `metro-core`; ao atualizar o enunciado, atualiza as duas.
+
+Antes de decidir comportamento visível ao passageiro ou contratos com outros componentes, lê esse ficheiro.
+
+Esta aplicação é a web de passageiros. O sistema tem de ser distribuído: core, serviços de apoio e notificações não ficam todos dentro desta app.
