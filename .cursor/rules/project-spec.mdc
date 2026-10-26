@@ -1,12 +1,20 @@
 ---
-description: Especificação do MetroIsJustABus. Usar em fluxos de passageiro, rede, horários, bilhetes, perturbações, notificações e contratos com o backend.
+description: MetroIsJustABus specification. Use for passenger and ops UI flows, network, schedules, tickets, disruptions, notification preferences, and contracts with the backend.
 alwaysApply: false
 ---
 
-# Especificação do projeto
+# Project specification
 
-A especificação consultável é `docs/spec/metro-is-just-a-bus.md` (enunciado v1.0, 2026-09-29). O PDF original está em `docs/spec/`. Há uma cópia igual em `metro-core`; ao atualizar o enunciado, atualiza as duas.
+The searchable specification is `docs/spec/metro-is-just-a-bus.md` (statement v1.0, 2026-09-29). The original PDF is in `docs/spec/`. An identical copy lives in `metro-core`; when updating the statement, update both.
 
-Antes de decidir comportamento visível ao passageiro ou contratos com outros componentes, lê esse ficheiro.
+Permanent agent context (SDD): `.ai/steering/` (`product.md`, `tech-stack.md`, `conventions.md`, `principles.md`) and `AGENTS.md`.
 
-Esta aplicação é a web de passageiros. O sistema tem de ser distribuído: core, serviços de apoio e notificações não ficam todos dentro desta app.
+## What to read when
+
+- **Default (UI implementation):** `.ai/steering/` and `AGENTS.md`. Do not load the full statement only for deadlines or grading.
+- **Milestone / delivery / grading / alignment checks:** read `docs/spec/metro-is-just-a-bus.md` (milestones and evaluation criteria). PDF prevails on conflict.
+- **Flows or API contracts while coding:** steering plus Technical Description of the statement as needed.
+
+Before deciding passenger- or ops-visible behavior or contracts with other components, read steering (and the statement when relevant).
+
+This application is the single web client for passengers and operational staff (role-based). The system must be distributed: core, supporting services, and notifications do not all live inside this app. Do not implement domain rules here — consume `metro-core` APIs.
