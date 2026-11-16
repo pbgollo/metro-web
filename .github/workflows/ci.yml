@@ -41,5 +41,26 @@ jobs:
         run: npm ci
 
       - name: Build project (Production)
-        run: npm run build
+        run: npm run build -- --base-href /metro-web/
 
+      - name: Upload GitHub Pages artifact
+        if: github.ref == 'refs/heads/develop'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist/metro-web/browser
+
+  deploy-development:
+    name: Deploy Development Environment
+    if: github.ref == 'refs/heads/develop'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: development
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

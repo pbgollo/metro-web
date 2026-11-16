@@ -36,6 +36,15 @@ ng build
 
 This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
 
+## Development deployment
+
+Pushes to the `develop` branch build the app and deploy it to GitHub Pages at
+`https://pbgollo.github.io/metro-web/`. Other branches and pull requests run
+the build without deploying.
+
+In the repository settings, configure **Pages → Build and deployment → Source**
+as **GitHub Actions**.
+
 ## Running unit tests
 
 To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
